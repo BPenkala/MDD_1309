@@ -27,24 +27,15 @@ var searchagram = angular.module(
 
 					$scope.images = data.data;
 
-					// Set the first image active
-					if ( data.data.length )
-						$scope.makeActiveSlide( $scope.imgCurrent );
-
 					// Cancel the previous update request
 					if ( refreshApi )
 						$timeout.cancel( refreshApi );
-
-					// Check for new images on every loop
-					if ( data.data.length )
-						refreshApi = $timeout( $scope.fetchImages, 6000 * data.data.length );
+						
 				}).error( function() {
 					delete $scope.loadingClass;
 					refreshApi = $timeout( $scope.fetchImages, 2000 );
 				});
 			}
-
-
 
 			$scope.tagChange = function() {
 				$location.path( '/tag/' + $scope.tag );

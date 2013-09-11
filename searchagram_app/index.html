@@ -1,21 +1,38 @@
 <!doctype html>
 <html ng-app="searchagram">
 <head>
-	<meta charset="utf-8" />
-	<title>Searchagram</title>
-	<script src="assets/angular.min.js"></script>
-	<script src="assets/searchagram.js"></script>
+	<meta charset="utf-8"
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<script src="js/angular.min.js"></script>
+	<script src="js/searchagram.js"></script>
 </head>
-<body ng-controller="imageView" ng-class="loadingClass">
-	<h1>
-		<img src="assets/instagram-logo.png" /> 
-		#<input type="text" ng-model="tag" ng-change="tagChange()" size="{{ tag.length }}" />
-	</h1>
 
-	<ul id="slides">
-		<li ng-repeat="image in images" class="slide" ng-class="{ active : image.isActive }">
+   
+<body ng-controller="imageView" ng-class="loadingClass">
+<div class="jumbotron">
+  <div class="container">
+    <h1>Instagram Easy-mode...</h1>
+    <p>SearchaGram makes searching for Instagram photos simple and easy.  <br />Go ahead, give it a try.</p>
+    <p> 	
+    <div class="col-lg-6">
+    	<div class="input-group">
+      		<input type="text" placeholder="No # needed!" class="form-control" ng-model="tag" ng-change="tagChange()" size="{{ tag.length }}">
+      		<span class="input-group-btn">
+        		<button class="btn btn-default" type="button">Search!</button>
+      		</span>
+    		</div><!-- /input-group -->
+  	</div><!-- /.col-lg-6 --></p>
+  </div>
+</div>
+	<div class="container">
+
+	
+	<ul id="grams">
+		<li ng-repeat="image in images" class="grams" ng-class="{ active : image.isActive }">
 			<figure>
-				<img ng-src="{{ image.images.standard_resolution.url }}" class="image" />
+				<img ng-src="{{ image.images.low_resolution.url }}" class="image" />
 			</figure>
 
 			<div class="meta">
@@ -27,7 +44,7 @@
 					{{ image.caption.text }}
 				</p>
 				<p class="likes">
-					&hearts; {{ image.likes.count }} likes
+					{{ image.likes.count }} likes
 				</p>
 				<ul class="comments">
 					<li class="comment" ng-repeat="comment in image.comments.data">
@@ -41,5 +58,7 @@
 			</div>
 		</li>
 	</ul>
+	</div>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
