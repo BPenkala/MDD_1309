@@ -5,8 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<script src="js/angular.min.js"></script>
-	<script src="js/searchagram.js"></script>
 </head>
 
    
@@ -14,8 +12,7 @@
 <div class="jumbotron">
   <div class="container">
     <h1>Instagram Easy-mode...</h1>
-    <p>SearchaGram makes searching for Instagram photos simple and easy.  <br />Go ahead, give it a try.</p>
-    <p> 	
+    <p>SearchaGram makes searching for Instagram photos simple and easy.  <br />Go ahead, give it a try.</p> 	
     <div class="col-lg-6">
     	<div class="input-group">
       		<input type="text" placeholder="No # needed!" class="form-control" ng-model="tag" ng-change="tagChange()" size="{{ tag.length }}">
@@ -23,42 +20,26 @@
         		<button class="btn btn-default" type="button">Search!</button>
       		</span>
     		</div><!-- /input-group -->
-  	</div><!-- /.col-lg-6 --></p>
+  	</div><!-- /.col-lg-6 -->
   </div>
 </div>
-	<div class="container">
-
-	
-	<ul id="grams">
-		<li ng-repeat="image in images" class="grams" ng-class="{ active : image.isActive }">
-			<figure>
-				<img ng-src="{{ image.images.low_resolution.url }}" class="image" />
-			</figure>
-
-			<div class="meta">
-				<p class="caption">
-					<cite class="author">
-						<img ng-src="{{ image.user.profile_picture }}" width="40" height="40" /> 
-						{{ image.user.username }}
-					</cite> 
-					{{ image.caption.text }}
-				</p>
-				<p class="likes">
-					{{ image.likes.count }} likes
-				</p>
-				<ul class="comments">
-					<li class="comment" ng-repeat="comment in image.comments.data">
-						<cite class="author">
-							<img ng-src="{{ comment.from.profile_picture }}" width="40" height="40" /> 
-							{{ comment.from.username }}
-						</cite> 
-						{{ comment.text }}
-					</li>
-				</ul>
-			</div>
-		</li>
-	</ul>
-	</div>
+<div class="container">
+	<div class="row" ng-repeat="image in images" class="grams" ng-class="{ active : image.isActive }">
+  		<div class="col-sm-6 col-md-3">
+    		<div class="thumbnail">
+      			<img ng-src="{{ image.images.standard_resolution.url }}"/>
+      				<div class="caption">
+      					<h3><a href="{{ image.images.link }} "><img ng-src="{{ image.user.profile_picture }}" width="80" height="80" /> {{ image.user.username }}</a></h3>
+       					<p>{{ image.caption.text }}</p>
+       					<p>{{ image.likes.count }} likes</p>
+     				</div>
+     				
+    		</div>
+  		</div>
+	</div>	
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/searchagram.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
