@@ -4,40 +4,51 @@
 	<meta charset="utf-8"
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
-
-   
+<a name="Top"></a>
 <body ng-controller="imageView" ng-class="loadingClass">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">SearchAGram</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+          <li><a href="about.html">About</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+    <div class="visible-md-lg-sm" style="height:100px;"> </div>
+<div class="container theme-showcase">
 <div class="jumbotron">
   <div class="container">
-    <h1>Instagram Easy-mode...</h1>
-    <p>SearchaGram makes searching for Instagram photos simple and easy.  <br />Go ahead, give it a try.</p> 	
-    <div class="col-lg-6">
-    	<div class="input-group">
-      		<input type="text" placeholder="No # needed!" class="form-control" ng-model="tag" ng-change="tagChange()" size="{{ tag.length }}">
-      		<span class="input-group-btn">
-        		<button class="btn btn-default" type="button">Search!</button>
-      		</span>
-    		</div><!-- /input-group -->
+    <h1>SearchAGram</h1><p>...makes searching for Instagram photos simple and easy.  <br />Go ahead, give it a try.</p> 	
+	<div class="form-group input-group-lg">
+	<input class="form-control" type="text" placeholder="No # needed!"  ng-model="tag" ng-change="tagChange()"/>
+	</div>
   	</div><!-- /.col-lg-6 -->
   </div>
 </div>
 <div class="container">
-	<div class="row" ng-repeat="image in images" class="grams" ng-class="{ active : image.isActive }">
-  		<div class="col-sm-6 col-md-3">
+	<div class="row" >
+  		<div class="col-xs-12 col-md-6 col-lg-4" ng-repeat="image in images" class="img-responsive" ng-class="{ active : image.isActive }">
     		<div class="thumbnail">
       			<img ng-src="{{ image.images.standard_resolution.url }}"/>
       				<div class="caption">
-      					<h3><a href="{{ image.images.link }} "><img ng-src="{{ image.user.profile_picture }}" width="80" height="80" /> {{ image.user.username }}</a></h3>
-       					<p>{{ image.caption.text }}</p>
-       					<p>{{ image.likes.count }} likes</p>
+      					<h4><img ng-src="{{ image.user.profile_picture }}" width="50" height="50" /> {{ image.user.username }}</h4>
+       					<p><a href="{{ image.link }}"><img src="img/instagram-logo.png"></p></a>
+       					<p>{{ image.geo }}</p>
+       					<p>{{ image.likes.count }} likes </p>
      				</div>
-     				
     		</div>
   		</div>
 	</div>	
 </div>
+</div>
+<div class="visible-md-lg-sm" style="height:100px;"> </div>
 <script src="js/angular.min.js"></script>
 <script src="js/searchagram.js"></script>
 <script src="js/bootstrap.min.js"></script>

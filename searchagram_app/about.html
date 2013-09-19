@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-app="searchagram">
+<head>
+	<meta charset="utf-8"
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<a name="Top"></a>
+<body ng-controller="imageView" ng-class="loadingClass">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">SearchAGram</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+          <li ng-class="navClass('about')"><a href="about#/">About</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+    <div class="visible-lg-md-sm" style="height:100px;"> </div>
+      <div class="container">
+        <div class="page-header">
+          <h1>About SearchAGram</h1>
+        </div>
+        <p class="lead">SearchAGram was developed for educational purposes only using AngularJS.  The goal of this was to develop an Instagram hashtag search quickly and easily with a minimalis UI.</p>
+        <p>SearchAGram was written using:</p>
+        <ul>
+        	<li>AngularJS</li>
+        	<li>Twitter Bootstrap</li>
+        	<li>HTML5</li>
+        	<li>CSS3</li>
+        	<li>Instagram API</li>
+        </ul>
+<div class="page-header">
+	<h2>Contact</h2>
+</div>
+<p class="lead">Have a question, suggestion or problem?  We'd love to hear about it!</p>
+<form role="form">
+  <div class="form-group">
+    <label for="first">First Name</label>
+    <input type="first" class="form-control" id="first" placeholder="First">
+  </div>
+  <div class="form-group">
+    <label for="last">Last Name</label>
+    <input type="last" class="form-control" id="first" placeholder="Last">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email">
+  </div>
+  	<div class="form-group">
+<label for="message">Message</label>
+<textarea name="message" id="message" class="form-control" rows="10"></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Send</button>
+</form>
+    <div class="visible-lg-md-sm" style="height:100px;"> </div>
+      </div>
+    </div>
+</div>
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/searchagram.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+

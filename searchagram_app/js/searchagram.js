@@ -2,7 +2,8 @@ var searchagram = angular.module(
 		'searchagram', []
 	).config(
 		['$routeProvider', '$locationProvider', function( $routeProvider, $locationProvider ) {
-			$routeProvider.when('/tag/:tag');
+			$routeProvider
+			.when('/tag/:tag');
 		}]
   	).controller(
 		'imageView', function ( $scope, $http, $timeout, $route, $location ) {
