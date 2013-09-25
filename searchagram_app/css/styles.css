@@ -1,0 +1,54 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* Button */
+
+.go-top {
+	position: fixed;
+	bottom: 2em;
+	right: .5em;
+	text-decoration: none;
+ border-top: 1px solid #000000;
+   background: #4c7fb5;
+   background: -webkit-gradient(linear, left top, left bottom, from(#2758d6), to(#4c7fb5));
+   background: -webkit-linear-gradient(top, #2758d6, #4c7fb5);
+   background: -moz-linear-gradient(top, #2758d6, #4c7fb5);
+   background: -ms-linear-gradient(top, #2758d6, #4c7fb5);
+   background: -o-linear-gradient(top, #2758d6, #4c7fb5);
+   padding: 8px 16px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+	font-size: 14px;
+	padding: 1em;
+	display: none;
+}
+
+.go-top:hover {
+   border-top-color: #36e633;
+   background: #36e633;
+   color: #030303;
+   text-decoration: none;
+
+}
+
+.go-top:active {
+	text-decoration: none;
+	color:white;
+}
+
+.go-top:visited { 
+	text-decoration: none;
+	color: white; 
+
+} 
+
+.go-top:link {
+	text-decoration: none;
+}
