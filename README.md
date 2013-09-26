@@ -9,10 +9,12 @@ Download and run index.html from folder.  No need for local server.
 
 --Changelog--
 
-First commit - 9/11/13:  Search functionality working successfully.  No presentational aspects completed yet.
+First commit - 9/11/13: (2.1) Search functionality working successfully.  No presentational aspects completed yet.
 
-Additional commits - 9/11/13:  Bootstrapped and presentational work begun - changed markup.
+Additional commits - 9/11/13: (2.2) Bootstrapped and presentational work begun - changed markup.
 
-9/17/13:  Improved styling, reevaluated code for improvements, added about page.
+9/17/13:  (3.1)Improved styling, reevaluated code for improvements, added about page.
 
-9/24/13:  Reworked timings, added commenting to angular code, added branding elements.
+9/24/13: (4.1) Reworked timings, added commenting to angular code, added branding elements.
+
+9/26/13: (4.2) Final evaluation and commit.
